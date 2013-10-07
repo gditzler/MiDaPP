@@ -7,7 +7,7 @@ from biom.parse import parse_biom_table
 from qiime.parse import parse_mapping_file_to_dict
 import cogent.maths.distance_transform as distance_transform
 
-site_column = "HMPbodysubsite"
+site_col = "HMPbodysubsite"
 
 def hmp_pcoa(biom_path, map_path, distance="hellinger"):
   """
@@ -66,11 +66,11 @@ def extract_labels(obj):
   labels_numeric = []
   labels_string = [] 
   for id_name in obj.keys(): 
-    labels_string.append(obj[id_name]["HMPbodysubsite"])
-    if not classes.has_key(obj[id_name]["HMPbodysubsite"]):
-      classes[obj[id_name]["HMPbodysubsite"]] = n
+    labels_string.append(obj[id_name][site_col])
+    if not classes.has_key(obj[id_name][site_col]):
+      classes[obj[id_name][site_col]] = n
       n += 1 
-    labels_numeric.append(classes[obj[id_name]["HMPbodysubsite"]])
+    labels_numeric.append(classes[obj[id_name][site_col]])
   return labels_numeric, labels_string, classes
 
 if __name__ == "__main__": 
