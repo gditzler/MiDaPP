@@ -4,6 +4,7 @@ emp/biom/
 emp/maps/
 emp/data/
 tmp/
+*.txt
 
 # C extensions
 *.so
